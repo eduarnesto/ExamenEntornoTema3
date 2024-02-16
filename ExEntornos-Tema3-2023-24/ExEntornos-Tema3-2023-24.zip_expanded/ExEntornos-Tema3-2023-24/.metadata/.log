@@ -1,0 +1,1343 @@
+!SESSION 2024-02-16 11:39:24.079 -----------------------------------------------
+eclipse.buildId=4.30.0.20231201-1200
+java.version=21.0.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -data C:\Users\earnesto\Documents\ExTema3-EduardoArnesto\ExEntornos-Tema3-2023-24 -product org.eclipse.epp.package.java.product
+
+This is a continuation of log file C:\Users\earnesto\eclipse\java-2023-09\eclipse\configuration\1708079964174.bak_1.log
+Created Time: 2024-02-16 11:39:26.922
+
+!ENTRY org.eclipse.papyrus.uml.ui 4 0 2024-02-16 11:39:26.938
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.papyrus.uml.ui [1041]
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.uml.tools; bundle-version="[5.0.0,6.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.uml.tools; bundle-version="5.1.0.202212021317"; singleton:="true"
+       org.eclipse.papyrus.uml.tools [1038]
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.services.edit.ui; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.services.edit.ui; bundle-version="4.0.0.202212021317"; singleton:="true"
+              org.eclipse.papyrus.infra.services.edit.ui [867]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.ui.emf [891]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                            org.eclipse.papyrus.infra.architecture [749]
+                              No resolution report for the bundle.         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"] because it is exposed to package 'com.google.common.base' from resources com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"] and com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.xtend.lib)(&(bundle-version>=2.24.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend.lib
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"]
+
+Chain 2:
+  org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.inject)(&(bundle-version>=5.0.0)(!(bundle-version>=6.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="5.0.1.v20210324-2015"; osgi.wiring.bundle="com.google.inject"
+  com.google.inject [osgi.identity; type="osgi.bundle"; version:Version="5.0.1.v20210324-2015"; osgi.identity="com.google.inject"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=30.1.0)(!(version>=31.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.base
+    export: osgi.wiring.package=com.google.common.base
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.papyrus.uml.xtext.integration.validation 4 0 2024-02-16 11:39:26.938
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.papyrus.uml.xtext.integration.validation [1044]
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.uml.xtext.integration.ui; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.uml.xtext.integration.ui; bundle-version="3.1.0.202212021317"; singleton:="true"
+       org.eclipse.papyrus.uml.xtext.integration.ui [1043]
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="4.3.0.202212021317"; singleton:="true"
+              org.eclipse.papyrus.infra.gmfdiag.common [789]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="3.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.gmfdiag.representation [816]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="[5.0.0,6.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="5.0.0.202212021317"; singleton:="true"
+                            org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration [812]
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.core; bundle-version="[5.0.0,6.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.core; bundle-version="5.1.0.202212021317"; singleton:="true"
+                                   org.eclipse.papyrus.infra.types.core [883]
+                                     Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                                       -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                                          org.eclipse.papyrus.infra.architecture [749]
+                                            No resolution report for the bundle.                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.properties.ui; bundle-version="[4.0.0,5.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.properties.ui; bundle-version="4.1.0.202212021317"; singleton:="true"
+                                   org.eclipse.papyrus.infra.properties.ui [858]
+                                     Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                                       -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                                          org.eclipse.papyrus.infra.ui.emf [891]
+                                            Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                                              -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="4.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.viewpoints.policy [894]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="3.0.0.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.core; bundle-version="[5.0.0,6.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.core; bundle-version="5.1.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="[5.0.0,6.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="5.0.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.services.edit.ui; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.services.edit.ui; bundle-version="4.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.services.edit.ui [867]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="4.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.gmfdiag.commands [788]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="[4.0.0,5.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="4.0.0.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="3.0.0.202212021317"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.papyrus.infra.gmfdiag.common [osgi.identity; type="osgi.bundle"; version:Version="4.3.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.gmfdiag.common"; singleton:="true"] because it is exposed to package 'org.apache.batik.dom.svg' from resources org.apache.batik.dom.svg [osgi.identity; type="osgi.bundle"; version:Version="1.16.0.v20221027-0840"; osgi.identity="org.apache.batik.dom.svg"] and org.apache.batik.dom.svg [osgi.identity; type="osgi.bundle"; version:Version="1.17.0.v20231009-1000"; osgi.identity="org.apache.batik.dom.svg"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.papyrus.infra.gmfdiag.common [osgi.identity; type="osgi.bundle"; version:Version="4.3.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.gmfdiag.common"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.batik.dom.svg)(&(bundle-version>=1.16.0)(!(bundle-version>=1.17.0))))
+     |
+    provide: osgi.wiring.bundle: org.apache.batik.dom.svg
+  org.apache.batik.dom.svg [osgi.identity; type="osgi.bundle"; version:Version="1.16.0.v20221027-0840"; osgi.identity="org.apache.batik.dom.svg"]
+
+Chain 2:
+  org.eclipse.papyrus.infra.gmfdiag.common [osgi.identity; type="osgi.bundle"; version:Version="4.3.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.gmfdiag.common"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.batik.anim)(&(bundle-version>=1.16.0)(!(bundle-version>=1.17.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.16.0.v20221027-0840"; osgi.wiring.bundle="org.apache.batik.anim"
+  org.apache.batik.anim [osgi.identity; type="osgi.bundle"; version:Version="1.16.0.v20221027-0840"; osgi.identity="org.apache.batik.anim"]
+    import: (&(osgi.wiring.package=org.apache.batik.dom.svg)(&(version>=1.16.0)(!(version>=2.0.0))))
+     |
+    export: osgi.wiring.package: org.apache.batik.dom.svg
+  org.apache.batik.dom.svg [osgi.identity; type="osgi.bundle"; version:Version="1.17.0.v20231009-1000"; osgi.identity="org.apache.batik.dom.svg"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.papyrus.views.documentation 4 0 2024-02-16 11:39:26.938
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.papyrus.views.documentation [1045]
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.properties.ui; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.infra.properties.ui; bundle-version="4.1.0.202212021317"; singleton:="true"
+       org.eclipse.papyrus.infra.properties.ui [858]
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+              org.eclipse.papyrus.infra.ui.emf [891]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.architecture [749]
+                       No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.uml.tools; bundle-version="[5.0.0,6.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.uml.tools; bundle-version="5.1.0.202212021317"; singleton:="true"
+       org.eclipse.papyrus.uml.tools [1038]
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.services.edit.ui; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.services.edit.ui; bundle-version="4.0.0.202212021317"; singleton:="true"
+              org.eclipse.papyrus.infra.services.edit.ui [867]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.uml.types.core; bundle-version="[5.0.0,6.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.uml.types.core; bundle-version="5.0.0.202212021317"; singleton:="true"
+       org.eclipse.papyrus.uml.types.core [1040]
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.rulebased; bundle-version="[5.0.0,6.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.rulebased; bundle-version="5.0.0.202212021317"; singleton:="true"
+              org.eclipse.papyrus.infra.types.rulebased [887]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.core; bundle-version="[5.0.0,6.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.core; bundle-version="5.1.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.types.core [883]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.emf.types; bundle-version="[5.0.0,6.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.emf.types; bundle-version="5.0.0.202212021317"; singleton:="true"
+              org.eclipse.papyrus.infra.emf.types [779]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.core; bundle-version="[5.0.0,6.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.core; bundle-version="5.1.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.rulebased; bundle-version="[5.0.0,6.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.rulebased; bundle-version="5.0.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.properties.ui; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.properties.ui; bundle-version="4.1.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.core; bundle-version="[5.0.0,6.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.core; bundle-version="5.1.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.uml.diagram.common; bundle-version="[5.0.0,6.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.uml.diagram.common; bundle-version="5.0.0.202212021317"; singleton:="true"
+              org.eclipse.papyrus.uml.diagram.common [937]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="3.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.gmfdiag.representation [816]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="[5.0.0,6.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="5.0.0.202212021317"; singleton:="true"
+                            org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration [812]
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.core; bundle-version="[5.0.0,6.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.core; bundle-version="5.1.0.202212021317"; singleton:="true"
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.properties.ui; bundle-version="[4.0.0,5.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.properties.ui; bundle-version="4.1.0.202212021317"; singleton:="true"
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="4.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.gmfdiag.commands [788]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="[4.0.0,5.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="4.0.0.202212021317"; singleton:="true"
+                            org.eclipse.papyrus.infra.viewpoints.policy [894]
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="[3.0.0,4.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="3.0.0.202212021317"; singleton:="true"
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="3.0.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.preferences; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.preferences; bundle-version="4.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.gmfdiag.preferences [814]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="[4.0.0,5.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="4.3.0.202212021317"; singleton:="true"
+                            org.eclipse.papyrus.infra.gmfdiag.common [789]
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="[3.0.0,4.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="3.0.0.202212021317"; singleton:="true"
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="[4.0.0,5.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="4.0.0.202212021317"; singleton:="true"
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.core; bundle-version="[5.0.0,6.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.core; bundle-version="5.1.0.202212021317"; singleton:="true"
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="[5.0.0,6.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="5.0.0.202212021317"; singleton:="true"
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.services.edit.ui; bundle-version="[4.0.0,5.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.services.edit.ui; bundle-version="4.0.0.202212021317"; singleton:="true"
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="[4.0.0,5.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="4.0.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.canonical; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.canonical; bundle-version="3.1.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.gmfdiag.canonical [787]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="[4.0.0,5.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="4.3.0.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="[4.0.0,5.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="4.0.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="4.0.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.expansion; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.expansion; bundle-version="4.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.gmfdiag.expansion [802]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.core; bundle-version="[5.0.0,6.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.core; bundle-version="5.1.0.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="[4.0.0,5.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="4.3.0.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="[4.0.0,5.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="4.0.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.uml.tools; bundle-version="[5.0.0,6.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.uml.tools; bundle-version="5.1.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.hyperlink; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.hyperlink; bundle-version="4.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.hyperlink [825]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.dnd; bundle-version="[2.0.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.dnd; bundle-version="2.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.gmfdiag.dnd [801]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="[4.0.0,5.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="4.3.0.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.expansion; bundle-version="[4.0.0,5.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.expansion; bundle-version="4.0.0.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="[4.0.0,5.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="4.0.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="4.3.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="4.3.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.views.properties; bundle-version="[5.0.0,6.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.views.properties; bundle-version="5.0.0.202212021317"; singleton:="true"
+              org.eclipse.papyrus.views.properties [1051]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.properties.ui; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.properties.ui; bundle-version="4.1.0.202212021317"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.uml.ui; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.uml.ui; bundle-version="2.0.0.202212021317"; singleton:="true"
+       org.eclipse.papyrus.uml.ui [1041]
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.uml.tools; bundle-version="[5.0.0,6.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.uml.tools; bundle-version="5.1.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"] because it is exposed to package 'com.google.common.base' from resources com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"] and com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.xtend.lib)(&(bundle-version>=2.24.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend.lib
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"]
+
+Chain 2:
+  org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.inject)(&(bundle-version>=5.0.0)(!(bundle-version>=6.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="5.0.1.v20210324-2015"; osgi.wiring.bundle="com.google.inject"
+  com.google.inject [osgi.identity; type="osgi.bundle"; version:Version="5.0.1.v20210324-2015"; osgi.identity="com.google.inject"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=30.1.0)(!(version>=31.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.base
+    export: osgi.wiring.package=com.google.common.base
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.papyrus.views.modelexplorer 4 0 2024-02-16 11:39:26.954
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.papyrus.views.modelexplorer [1047]
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="4.0.0.202212021317"; singleton:="true"
+       org.eclipse.papyrus.infra.gmfdiag.commands [788]
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="4.0.0.202212021317"; singleton:="true"
+              org.eclipse.papyrus.infra.viewpoints.policy [894]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.ui.emf [891]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                            org.eclipse.papyrus.infra.architecture [749]
+                              No resolution report for the bundle.                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="3.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.gmfdiag.representation [816]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="[5.0.0,6.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="5.0.0.202212021317"; singleton:="true"
+                            org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration [812]
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.core; bundle-version="[5.0.0,6.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.core; bundle-version="5.1.0.202212021317"; singleton:="true"
+                                   org.eclipse.papyrus.infra.types.core [883]
+                                     Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                                       -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.properties.ui; bundle-version="[4.0.0,5.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.properties.ui; bundle-version="4.1.0.202212021317"; singleton:="true"
+                                   org.eclipse.papyrus.infra.properties.ui [858]
+                                     Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                                       -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="3.0.0.202212021317"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="4.0.0.202212021317"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="4.3.0.202212021317"; singleton:="true"
+       org.eclipse.papyrus.infra.gmfdiag.common [789]
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="3.0.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="4.0.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.core; bundle-version="[5.0.0,6.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.core; bundle-version="5.1.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="[5.0.0,6.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="5.0.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.services.edit.ui; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.services.edit.ui; bundle-version="4.0.0.202212021317"; singleton:="true"
+              org.eclipse.papyrus.infra.services.edit.ui [867]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="4.0.0.202212021317"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"] because it is exposed to package 'com.google.common.base' from resources com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"] and com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.xtend.lib)(&(bundle-version>=2.24.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend.lib
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"]
+
+Chain 2:
+  org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.inject)(&(bundle-version>=5.0.0)(!(bundle-version>=6.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="5.0.1.v20210324-2015"; osgi.wiring.bundle="com.google.inject"
+  com.google.inject [osgi.identity; type="osgi.bundle"; version:Version="5.0.1.v20210324-2015"; osgi.identity="com.google.inject"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=30.1.0)(!(version>=31.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.base
+    export: osgi.wiring.package=com.google.common.base
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.papyrus.views.modelexplorer.newchild 4 0 2024-02-16 11:39:26.954
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.papyrus.views.modelexplorer.newchild [1048]
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.views.modelexplorer; bundle-version="[5.0.0,6.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.views.modelexplorer; bundle-version="5.0.100.202212021317"; singleton:="true"
+       org.eclipse.papyrus.views.modelexplorer [1047]
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="4.0.0.202212021317"; singleton:="true"
+              org.eclipse.papyrus.infra.gmfdiag.commands [788]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="4.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.viewpoints.policy [894]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                            org.eclipse.papyrus.infra.ui.emf [891]
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                                   org.eclipse.papyrus.infra.architecture [749]
+                                     No resolution report for the bundle.                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="3.0.0.202212021317"; singleton:="true"
+                            org.eclipse.papyrus.infra.gmfdiag.representation [816]
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="[5.0.0,6.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="5.0.0.202212021317"; singleton:="true"
+                                   org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration [812]
+                                     Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.core; bundle-version="[5.0.0,6.0.0)"
+                                       -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.core; bundle-version="5.1.0.202212021317"; singleton:="true"
+                                          org.eclipse.papyrus.infra.types.core [883]
+                                            Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                                              -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                                     Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.properties.ui; bundle-version="[4.0.0,5.0.0)"
+                                       -> Bundle-SymbolicName: org.eclipse.papyrus.infra.properties.ui; bundle-version="4.1.0.202212021317"; singleton:="true"
+                                          org.eclipse.papyrus.infra.properties.ui [858]
+                                            Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                                              -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                                     Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                                       -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="3.0.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="4.0.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="4.3.0.202212021317"; singleton:="true"
+              org.eclipse.papyrus.infra.gmfdiag.common [789]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="3.0.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="4.0.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.core; bundle-version="[5.0.0,6.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.core; bundle-version="5.1.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="[5.0.0,6.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="5.0.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.services.edit.ui; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.services.edit.ui; bundle-version="4.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.services.edit.ui [867]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="4.0.0.202212021317"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.newchild; bundle-version="[5.0.0,6.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.infra.newchild; bundle-version="5.0.0.202212021317"; singleton:="true"
+       org.eclipse.papyrus.infra.newchild [848]
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="4.0.0.202212021317"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"] because it is exposed to package 'com.google.common.base' from resources com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"] and com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.xtend.lib)(&(bundle-version>=2.24.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend.lib
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"]
+
+Chain 2:
+  org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.inject)(&(bundle-version>=5.0.0)(!(bundle-version>=6.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="5.0.1.v20210324-2015"; osgi.wiring.bundle="com.google.inject"
+  com.google.inject [osgi.identity; type="osgi.bundle"; version:Version="5.0.1.v20210324-2015"; osgi.identity="com.google.inject"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=30.1.0)(!(version>=31.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.base
+    export: osgi.wiring.package=com.google.common.base
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.papyrus.views.properties 4 0 2024-02-16 11:39:26.969
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.papyrus.views.properties [1051]
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.properties.ui; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.infra.properties.ui; bundle-version="4.1.0.202212021317"; singleton:="true"
+       org.eclipse.papyrus.infra.properties.ui [858]
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+              org.eclipse.papyrus.infra.ui.emf [891]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.architecture [749]
+                       No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"] because it is exposed to package 'com.google.common.base' from resources com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"] and com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.xtend.lib)(&(bundle-version>=2.24.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend.lib
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"]
+
+Chain 2:
+  org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.inject)(&(bundle-version>=5.0.0)(!(bundle-version>=6.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="5.0.1.v20210324-2015"; osgi.wiring.bundle="com.google.inject"
+  com.google.inject [osgi.identity; type="osgi.bundle"; version:Version="5.0.1.v20210324-2015"; osgi.identity="com.google.inject"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=30.1.0)(!(version>=31.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.base
+    export: osgi.wiring.package=com.google.common.base
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.papyrus.views.properties.model.xwt 4 0 2024-02-16 11:39:26.969
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.papyrus.views.properties.model.xwt [1053]
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.properties.ui; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.infra.properties.ui; bundle-version="4.1.0.202212021317"; singleton:="true"
+       org.eclipse.papyrus.infra.properties.ui [858]
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+              org.eclipse.papyrus.infra.ui.emf [891]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.architecture [749]
+                       No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.views.properties; bundle-version="[5.0.0,6.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.views.properties; bundle-version="5.0.0.202212021317"; singleton:="true"
+       org.eclipse.papyrus.views.properties [1051]
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.properties.ui; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.properties.ui; bundle-version="4.1.0.202212021317"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"] because it is exposed to package 'com.google.common.base' from resources com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"] and com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.xtend.lib)(&(bundle-version>=2.24.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend.lib
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"]
+
+Chain 2:
+  org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.inject)(&(bundle-version>=5.0.0)(!(bundle-version>=6.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="5.0.1.v20210324-2015"; osgi.wiring.bundle="com.google.inject"
+  com.google.inject [osgi.identity; type="osgi.bundle"; version:Version="5.0.1.v20210324-2015"; osgi.identity="com.google.inject"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=30.1.0)(!(version>=31.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.base
+    export: osgi.wiring.package=com.google.common.base
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY ch.qos.logback.classic 1 0 2024-02-16 11:39:27.258
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2024-02-16 11:39:27.939
+!MESSAGE Logback config file: C:\Users\earnesto\Documents\ExTema3-EduardoArnesto\ExEntornos-Tema3-2023-24\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.2.1.20231030-1438.xml
+
+!ENTRY org.eclipse.jface 2 0 2024-02-16 11:39:29.128
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-02-16 11:39:29.128
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-02-16 11:39:31.188
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\earnesto'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-02-16 11:39:31.827
+!MESSAGE Can't open directory channel. Log directory fsync won't be performed.
+!SESSION 2024-02-16 11:52:59.744 -----------------------------------------------
+eclipse.buildId=4.30.0.20231201-1200
+java.version=21.0.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+This is a continuation of log file C:\Users\earnesto\eclipse\java-2023-09\eclipse\configuration\1708080779962.bak_1.log
+Created Time: 2024-02-16 11:53:31.103
+
+!ENTRY org.eclipse.papyrus.uml.ui 4 0 2024-02-16 11:53:31.103
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.papyrus.uml.ui [1041]
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.uml.tools; bundle-version="[5.0.0,6.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.uml.tools; bundle-version="5.1.0.202212021317"; singleton:="true"
+       org.eclipse.papyrus.uml.tools [1038]
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+              org.eclipse.papyrus.infra.ui.emf [891]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.architecture [749]
+                       No resolution report for the bundle.         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.services.edit.ui; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.services.edit.ui; bundle-version="4.0.0.202212021317"; singleton:="true"
+              org.eclipse.papyrus.infra.services.edit.ui [867]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"] because it is exposed to package 'com.google.common.base' from resources com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"] and com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.xtend.lib)(&(bundle-version>=2.24.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend.lib
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"]
+
+Chain 2:
+  org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.inject)(&(bundle-version>=5.0.0)(!(bundle-version>=6.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="5.0.1.v20210324-2015"; osgi.wiring.bundle="com.google.inject"
+  com.google.inject [osgi.identity; type="osgi.bundle"; version:Version="5.0.1.v20210324-2015"; osgi.identity="com.google.inject"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=30.1.0)(!(version>=31.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.base
+    export: osgi.wiring.package=com.google.common.base
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.papyrus.uml.xtext.integration.validation 4 0 2024-02-16 11:53:31.103
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.papyrus.uml.xtext.integration.validation [1044]
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.uml.xtext.integration.ui; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.uml.xtext.integration.ui; bundle-version="3.1.0.202212021317"; singleton:="true"
+       org.eclipse.papyrus.uml.xtext.integration.ui [1043]
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="4.3.0.202212021317"; singleton:="true"
+              org.eclipse.papyrus.infra.gmfdiag.common [789]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="[5.0.0,6.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="5.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration [812]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                            org.eclipse.papyrus.infra.ui.emf [891]
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                                   org.eclipse.papyrus.infra.architecture [749]
+                                     No resolution report for the bundle.                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.properties.ui; bundle-version="[4.0.0,5.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.properties.ui; bundle-version="4.1.0.202212021317"; singleton:="true"
+                            org.eclipse.papyrus.infra.properties.ui [858]
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.core; bundle-version="[5.0.0,6.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.core; bundle-version="5.1.0.202212021317"; singleton:="true"
+                            org.eclipse.papyrus.infra.types.core [883]
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="3.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.gmfdiag.representation [816]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="[5.0.0,6.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="5.0.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="4.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.viewpoints.policy [894]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="3.0.0.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="4.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.gmfdiag.commands [788]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="3.0.0.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="[4.0.0,5.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="4.0.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.services.edit.ui; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.services.edit.ui; bundle-version="4.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.services.edit.ui [867]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.core; bundle-version="[5.0.0,6.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.core; bundle-version="5.1.0.202212021317"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.papyrus.infra.gmfdiag.common [osgi.identity; type="osgi.bundle"; version:Version="4.3.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.gmfdiag.common"; singleton:="true"] because it is exposed to package 'org.apache.batik.dom.svg' from resources org.apache.batik.dom.svg [osgi.identity; type="osgi.bundle"; version:Version="1.16.0.v20221027-0840"; osgi.identity="org.apache.batik.dom.svg"] and org.apache.batik.dom.svg [osgi.identity; type="osgi.bundle"; version:Version="1.17.0.v20231009-1000"; osgi.identity="org.apache.batik.dom.svg"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.papyrus.infra.gmfdiag.common [osgi.identity; type="osgi.bundle"; version:Version="4.3.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.gmfdiag.common"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.batik.dom.svg)(&(bundle-version>=1.16.0)(!(bundle-version>=1.17.0))))
+     |
+    provide: osgi.wiring.bundle: org.apache.batik.dom.svg
+  org.apache.batik.dom.svg [osgi.identity; type="osgi.bundle"; version:Version="1.16.0.v20221027-0840"; osgi.identity="org.apache.batik.dom.svg"]
+
+Chain 2:
+  org.eclipse.papyrus.infra.gmfdiag.common [osgi.identity; type="osgi.bundle"; version:Version="4.3.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.gmfdiag.common"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.apache.batik.anim)(&(bundle-version>=1.16.0)(!(bundle-version>=1.17.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.16.0.v20221027-0840"; osgi.wiring.bundle="org.apache.batik.anim"
+  org.apache.batik.anim [osgi.identity; type="osgi.bundle"; version:Version="1.16.0.v20221027-0840"; osgi.identity="org.apache.batik.anim"]
+    import: (&(osgi.wiring.package=org.apache.batik.dom.svg)(&(version>=1.16.0)(!(version>=2.0.0))))
+     |
+    export: osgi.wiring.package: org.apache.batik.dom.svg
+  org.apache.batik.dom.svg [osgi.identity; type="osgi.bundle"; version:Version="1.17.0.v20231009-1000"; osgi.identity="org.apache.batik.dom.svg"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.papyrus.views.documentation 4 0 2024-02-16 11:53:31.120
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.papyrus.views.documentation [1045]
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.uml.ui; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.uml.ui; bundle-version="2.0.0.202212021317"; singleton:="true"
+       org.eclipse.papyrus.uml.ui [1041]
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.uml.tools; bundle-version="[5.0.0,6.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.uml.tools; bundle-version="5.1.0.202212021317"; singleton:="true"
+              org.eclipse.papyrus.uml.tools [1038]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.ui.emf [891]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                            org.eclipse.papyrus.infra.architecture [749]
+                              No resolution report for the bundle.                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.services.edit.ui; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.services.edit.ui; bundle-version="4.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.services.edit.ui [867]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.uml.types.core; bundle-version="[5.0.0,6.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.uml.types.core; bundle-version="5.0.0.202212021317"; singleton:="true"
+       org.eclipse.papyrus.uml.types.core [1040]
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.uml.diagram.common; bundle-version="[5.0.0,6.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.uml.diagram.common; bundle-version="5.0.0.202212021317"; singleton:="true"
+              org.eclipse.papyrus.uml.diagram.common [937]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="4.3.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.gmfdiag.common [789]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="[5.0.0,6.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="5.0.0.202212021317"; singleton:="true"
+                            org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration [812]
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.properties.ui; bundle-version="[4.0.0,5.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.properties.ui; bundle-version="4.1.0.202212021317"; singleton:="true"
+                                   org.eclipse.papyrus.infra.properties.ui [858]
+                                     Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                                       -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.core; bundle-version="[5.0.0,6.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.core; bundle-version="5.1.0.202212021317"; singleton:="true"
+                                   org.eclipse.papyrus.infra.types.core [883]
+                                     Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                                       -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="3.0.0.202212021317"; singleton:="true"
+                            org.eclipse.papyrus.infra.gmfdiag.representation [816]
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="[5.0.0,6.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="5.0.0.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="[4.0.0,5.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="4.0.0.202212021317"; singleton:="true"
+                            org.eclipse.papyrus.infra.viewpoints.policy [894]
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="[3.0.0,4.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="3.0.0.202212021317"; singleton:="true"
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="[4.0.0,5.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="4.0.0.202212021317"; singleton:="true"
+                            org.eclipse.papyrus.infra.gmfdiag.commands [788]
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="[3.0.0,4.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="3.0.0.202212021317"; singleton:="true"
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="[4.0.0,5.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="4.0.0.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.services.edit.ui; bundle-version="[4.0.0,5.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.services.edit.ui; bundle-version="4.0.0.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.core; bundle-version="[5.0.0,6.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.core; bundle-version="5.1.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="3.0.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="4.0.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.dnd; bundle-version="[2.0.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.dnd; bundle-version="2.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.gmfdiag.dnd [801]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.expansion; bundle-version="[4.0.0,5.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.expansion; bundle-version="4.0.0.202212021317"; singleton:="true"
+                            org.eclipse.papyrus.infra.gmfdiag.expansion [802]
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="[4.0.0,5.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="4.3.0.202212021317"; singleton:="true"
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="[4.0.0,5.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="4.0.0.202212021317"; singleton:="true"
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.core; bundle-version="[5.0.0,6.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.core; bundle-version="5.1.0.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="[4.0.0,5.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="4.3.0.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="[4.0.0,5.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="4.0.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.expansion; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.expansion; bundle-version="4.0.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.hyperlink; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.hyperlink; bundle-version="4.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.hyperlink [825]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.canonical; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.canonical; bundle-version="3.1.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.gmfdiag.canonical [787]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="[4.0.0,5.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="4.0.0.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="[4.0.0,5.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="4.3.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.uml.tools; bundle-version="[5.0.0,6.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.uml.tools; bundle-version="5.1.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="4.0.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.preferences; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.preferences; bundle-version="4.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.gmfdiag.preferences [814]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="[4.0.0,5.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="4.3.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.rulebased; bundle-version="[5.0.0,6.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.rulebased; bundle-version="5.0.0.202212021317"; singleton:="true"
+              org.eclipse.papyrus.infra.types.rulebased [887]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.core; bundle-version="[5.0.0,6.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.core; bundle-version="5.1.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.core; bundle-version="[5.0.0,6.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.core; bundle-version="5.1.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="4.3.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.emf.types; bundle-version="[5.0.0,6.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.emf.types; bundle-version="5.0.0.202212021317"; singleton:="true"
+              org.eclipse.papyrus.infra.emf.types [779]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.rulebased; bundle-version="[5.0.0,6.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.rulebased; bundle-version="5.0.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.core; bundle-version="[5.0.0,6.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.core; bundle-version="5.1.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.properties.ui; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.properties.ui; bundle-version="4.1.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.views.properties; bundle-version="[5.0.0,6.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.views.properties; bundle-version="5.0.0.202212021317"; singleton:="true"
+              org.eclipse.papyrus.views.properties [1051]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.properties.ui; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.properties.ui; bundle-version="4.1.0.202212021317"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.properties.ui; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.infra.properties.ui; bundle-version="4.1.0.202212021317"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.uml.tools; bundle-version="[5.0.0,6.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.uml.tools; bundle-version="5.1.0.202212021317"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"] because it is exposed to package 'com.google.common.base' from resources com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"] and com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.xtend.lib)(&(bundle-version>=2.24.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend.lib
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"]
+
+Chain 2:
+  org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.inject)(&(bundle-version>=5.0.0)(!(bundle-version>=6.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="5.0.1.v20210324-2015"; osgi.wiring.bundle="com.google.inject"
+  com.google.inject [osgi.identity; type="osgi.bundle"; version:Version="5.0.1.v20210324-2015"; osgi.identity="com.google.inject"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=30.1.0)(!(version>=31.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.base
+    export: osgi.wiring.package=com.google.common.base
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.papyrus.views.modelexplorer 4 0 2024-02-16 11:53:31.120
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.papyrus.views.modelexplorer [1047]
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="4.3.0.202212021317"; singleton:="true"
+       org.eclipse.papyrus.infra.gmfdiag.common [789]
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="[5.0.0,6.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="5.0.0.202212021317"; singleton:="true"
+              org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration [812]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.ui.emf [891]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                            org.eclipse.papyrus.infra.architecture [749]
+                              No resolution report for the bundle.                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.properties.ui; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.properties.ui; bundle-version="4.1.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.properties.ui [858]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.core; bundle-version="[5.0.0,6.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.core; bundle-version="5.1.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.types.core [883]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="3.0.0.202212021317"; singleton:="true"
+              org.eclipse.papyrus.infra.gmfdiag.representation [816]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="[5.0.0,6.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="5.0.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="4.0.0.202212021317"; singleton:="true"
+              org.eclipse.papyrus.infra.viewpoints.policy [894]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="3.0.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="4.0.0.202212021317"; singleton:="true"
+              org.eclipse.papyrus.infra.gmfdiag.commands [788]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="3.0.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="4.0.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.services.edit.ui; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.services.edit.ui; bundle-version="4.0.0.202212021317"; singleton:="true"
+              org.eclipse.papyrus.infra.services.edit.ui [867]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.core; bundle-version="[5.0.0,6.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.core; bundle-version="5.1.0.202212021317"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="4.0.0.202212021317"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="4.0.0.202212021317"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"] because it is exposed to package 'com.google.common.base' from resources com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"] and com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.xtend.lib)(&(bundle-version>=2.24.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend.lib
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"]
+
+Chain 2:
+  org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.inject)(&(bundle-version>=5.0.0)(!(bundle-version>=6.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="5.0.1.v20210324-2015"; osgi.wiring.bundle="com.google.inject"
+  com.google.inject [osgi.identity; type="osgi.bundle"; version:Version="5.0.1.v20210324-2015"; osgi.identity="com.google.inject"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=30.1.0)(!(version>=31.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.base
+    export: osgi.wiring.package=com.google.common.base
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.papyrus.views.modelexplorer.newchild 4 0 2024-02-16 11:53:31.140
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.papyrus.views.modelexplorer.newchild [1048]
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.views.modelexplorer; bundle-version="[5.0.0,6.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.views.modelexplorer; bundle-version="5.0.100.202212021317"; singleton:="true"
+       org.eclipse.papyrus.views.modelexplorer [1047]
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.common; bundle-version="4.3.0.202212021317"; singleton:="true"
+              org.eclipse.papyrus.infra.gmfdiag.common [789]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="[5.0.0,6.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="5.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration [812]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                            org.eclipse.papyrus.infra.ui.emf [891]
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                                   org.eclipse.papyrus.infra.architecture [749]
+                                     No resolution report for the bundle.                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.properties.ui; bundle-version="[4.0.0,5.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.properties.ui; bundle-version="4.1.0.202212021317"; singleton:="true"
+                            org.eclipse.papyrus.infra.properties.ui [858]
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.core; bundle-version="[5.0.0,6.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.core; bundle-version="5.1.0.202212021317"; singleton:="true"
+                            org.eclipse.papyrus.infra.types.core [883]
+                              Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="3.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.gmfdiag.representation [816]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="[5.0.0,6.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.paletteconfiguration; bundle-version="5.0.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="4.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.viewpoints.policy [894]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="3.0.0.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="4.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.gmfdiag.commands [788]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.representation; bundle-version="3.0.0.202212021317"; singleton:="true"
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="[4.0.0,5.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="4.0.0.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.services.edit.ui; bundle-version="[4.0.0,5.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.services.edit.ui; bundle-version="4.0.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.services.edit.ui [867]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.types.core; bundle-version="[5.0.0,6.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.types.core; bundle-version="5.1.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.viewpoints.policy; bundle-version="4.0.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="4.0.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.newchild; bundle-version="[5.0.0,6.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.infra.newchild; bundle-version="5.0.0.202212021317"; singleton:="true"
+       org.eclipse.papyrus.infra.newchild [848]
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.gmfdiag.commands; bundle-version="4.0.0.202212021317"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"] because it is exposed to package 'com.google.common.base' from resources com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"] and com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.xtend.lib)(&(bundle-version>=2.24.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend.lib
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"]
+
+Chain 2:
+  org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.inject)(&(bundle-version>=5.0.0)(!(bundle-version>=6.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="5.0.1.v20210324-2015"; osgi.wiring.bundle="com.google.inject"
+  com.google.inject [osgi.identity; type="osgi.bundle"; version:Version="5.0.1.v20210324-2015"; osgi.identity="com.google.inject"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=30.1.0)(!(version>=31.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.base
+    export: osgi.wiring.package=com.google.common.base
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.papyrus.views.properties 4 0 2024-02-16 11:53:31.140
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.papyrus.views.properties [1051]
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.properties.ui; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.infra.properties.ui; bundle-version="4.1.0.202212021317"; singleton:="true"
+       org.eclipse.papyrus.infra.properties.ui [858]
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+              org.eclipse.papyrus.infra.ui.emf [891]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.architecture [749]
+                       No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"] because it is exposed to package 'com.google.common.base' from resources com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"] and com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.xtend.lib)(&(bundle-version>=2.24.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend.lib
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"]
+
+Chain 2:
+  org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.inject)(&(bundle-version>=5.0.0)(!(bundle-version>=6.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="5.0.1.v20210324-2015"; osgi.wiring.bundle="com.google.inject"
+  com.google.inject [osgi.identity; type="osgi.bundle"; version:Version="5.0.1.v20210324-2015"; osgi.identity="com.google.inject"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=30.1.0)(!(version>=31.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.base
+    export: osgi.wiring.package=com.google.common.base
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.papyrus.views.properties.model.xwt 4 0 2024-02-16 11:53:31.153
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.papyrus.views.properties.model.xwt [1053]
+  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.views.properties; bundle-version="[5.0.0,6.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.views.properties; bundle-version="5.0.0.202212021317"; singleton:="true"
+       org.eclipse.papyrus.views.properties [1051]
+         Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.properties.ui; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.papyrus.infra.properties.ui; bundle-version="4.1.0.202212021317"; singleton:="true"
+              org.eclipse.papyrus.infra.properties.ui [858]
+                Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.ui.emf; bundle-version="[3.0.0,4.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.papyrus.infra.ui.emf; bundle-version="3.1.100.202212021317"; singleton:="true"
+                     org.eclipse.papyrus.infra.ui.emf [891]
+                       Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.architecture; bundle-version="[3.0.0,4.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.papyrus.infra.architecture; bundle-version="3.2.0.202212021317"; singleton:="true"
+                            org.eclipse.papyrus.infra.architecture [749]
+                              No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.papyrus.infra.properties.ui; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.papyrus.infra.properties.ui; bundle-version="4.1.0.202212021317"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"] because it is exposed to package 'com.google.common.base' from resources com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"] and com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.xtend.lib)(&(bundle-version>=2.24.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend.lib
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="32.1.3.jre"; osgi.identity="com.google.guava"]
+
+Chain 2:
+  org.eclipse.papyrus.infra.architecture [osgi.identity; type="osgi.bundle"; version:Version="3.2.0.202212021317"; osgi.identity="org.eclipse.papyrus.infra.architecture"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.inject)(&(bundle-version>=5.0.0)(!(bundle-version>=6.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="5.0.1.v20210324-2015"; osgi.wiring.bundle="com.google.inject"
+  com.google.inject [osgi.identity; type="osgi.bundle"; version:Version="5.0.1.v20210324-2015"; osgi.identity="com.google.inject"]
+    import: (&(osgi.wiring.package=com.google.common.collect)(&(version>=30.1.0)(!(version>=31.0.0))))
+     |
+    export: osgi.wiring.package: com.google.common.collect; uses:=com.google.common.base
+    export: osgi.wiring.package=com.google.common.base
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="30.1.0.v20221112-0806"; osgi.identity="com.google.guava"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY ch.qos.logback.classic 1 0 2024-02-16 11:53:46.038
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-02-16 11:53:46.490
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY ch.qos.logback.classic 1 0 2024-02-16 11:53:46.792
+!MESSAGE Logback config file: C:\Users\earnesto\Documents\ExTema3-EduardoArnesto\ExEntornos-Tema3-2023-24\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.2.1.20231030-1438.xml
+
+!ENTRY org.eclipse.jface 2 0 2024-02-16 11:53:48.531
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-02-16 11:53:48.531
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-02-16 11:53:51.103
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\earnesto'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-02-16 11:53:51.918
+!MESSAGE Can't open directory channel. Log directory fsync won't be performed.
