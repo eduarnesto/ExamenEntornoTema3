@@ -1,24 +1,41 @@
 package fecha;
 
+/**
+ * Clase donde se guardan los atributos relacionados con la fecha
+ */
 public class Fecha {
-	private int d; //día
-	private int m; //mes
-	private int a; //año
+	/**
+	 * Atributo para guardar el dia
+	 */
+	private int d; // dï¿½a
 
-	
+	/**
+	 * Atributo para guardar el mes
+	 */
+	private int m; // mes
+
+	/**
+	 * Atributo para guardar el anio
+	 */
+	private int a; // aï¿½o
+
 	public Fecha() {
 
 	}
 
-	
 	public Fecha(int dia, int mes, int anio) {
 		this.d = dia;
 		this.m = mes;
 		this.a = anio;
 	}
 
-	
-	
+	/**
+	 * Funcion que comprueba que la fecha sea posible
+	 * 
+	 * @return diaCorrecto Indica si el dia es correcto o no
+	 * @return mesCorrecto Indica si el mes es el correcto
+	 * @return anioCorrecto Indica si el anio es correcto
+	 */
 	public boolean fechaCorrecta() {
 		boolean diaCorrecto, mesCorrecto, anioCorrecto;
 		anioCorrecto = a > 0;
@@ -43,13 +60,22 @@ public class Fecha {
 		return diaCorrecto && mesCorrecto && anioCorrecto;
 	}
 
-	// Método esBisiesto. Solo lo usa fechaCorrecta, por eso es privado
+	/**
+	 * Funcion que comprueba si el anio es bisiesto o no
+	 * 
+	 * @return
+	 */
+	// Mï¿½todo esBisiesto. Solo lo usa fechaCorrecta, por eso es privado
 	private boolean esBisiesto() {
 		boolean esBisiesto = (a % 4 == 0 && a % 100 != 0 || a % 400 == 0);
 		return esBisiesto;
 	}
 
-	// Método diaSiguiente
+	/**
+	 * Funcion que aniade un dia mas y si el dia resulta ser el ultimo del mes aÃ±ade
+	 * un mes mÃ¡s y vuelve al dia 1. No devuelve nada
+	 */
+	// Mï¿½todo diaSiguiente
 	public void diaSiguiente() {
 		d++;
 		if (!fechaCorrecta()) {
@@ -62,7 +88,10 @@ public class Fecha {
 		}
 	}
 
-	// Método toString
+	/**
+	 * Funcion que convierte la fecah en un String. Devuelve un String
+	 */
+	// Mï¿½todo toString
 	public String toString() {
 		if (d < 10 && m < 10) {
 			return "0" + d + "-0" + m + "-" + a;
